@@ -1,0 +1,116 @@
+/* Базовые стили */
+body {
+    margin: 0; /* Убираем стандартные отступы */
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный шрифт */
+    background-color: #111; /* Чуть менее "плоский" черный */
+    color: #fff;
+    min-height: 100vh; /* Чтобы фон растягивался на всю высоту */
+}
+
+/* Стили для шапки */
+header {
+    background-color: #222; /* Темнее, чем #333, для строгости */
+    /* border-radius: 5px; Убираем скругления для строгости, или сделаем минимальные */
+    border-radius: 2px; /* Минимальное скругление */
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    padding: 10px 20px; /* Внутренние отступы вместо margin у потомков */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Легкая тень для выделения */
+    /* Или, для более резкого вида, можно убрать тень */
+}
+
+/* Ссылка с логотипом */
+.header {
+    /* margin-top: 0.2%; Лучше использовать px или rem для точности */
+    /* margin-left: 10px; */
+    display: block; /* Убедимся, что это блочный элемент */
+    /* Убираем margin, так как используем padding у header */
+}
+
+.header img {
+    display: block; /* Убираем возможное нижнее пространство под картинкой */
+    /* width и height лучше задавать в HTML или в CSS, но не в обоих одновременно, если не нужно. */
+    /* Если размеры фиксированы в HTML, можно убрать отсюда. */
+     height: 120px;
+    width: auto;
+}
+
+/* Контейнер для кнопок */
+.buttons {
+    display: flex; /* Используем flexbox для выравнивания кнопок */
+    margin-left: auto; /* Прижимает контейнер кнопок вправо */
+    /* height: auto; Не нужно, если не задаем фиксированную высоту */
+    /* border-radius: 5px; Убираем скругления */
+    background-color: #333; /* Темный фон для контейнера кнопок */
+    padding: 5px; /* Небольшой отступ внутри */
+    /* box-shadow: inset 0 0 2px rgba(0,0,0,0.5); Внутренняя тень для глубины (опционально) */
+}
+
+/* Стили для ссылок-кнопок */
+.headr, .heade { /* Объединяем стили для обеих кнопок */
+    /* margin-left: auto; Убираем, используем gap у .buttons */
+    /* margin-right: 10px; */
+    margin: 0; /* Сбрасываем стандартные маржины */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: block; /* Блочный элемент */
+}
+
+/* Стили для самих кнопок */
+button {
+    background-color: transparent; /* Прозрачный фон */
+    color: #ddd; /* Цвет текста */
+    border: 1px solid #555; /* Тонкая рамка */
+    border-radius: 0; /* Убираем скругления */
+    padding: 10px 20px; /* Внутренние отступы */
+    cursor: pointer; /* Курсор-рука */
+    font-size: 1rem; /* Размер шрифта */
+    font-weight: 500; /* Полужирный шрифт */
+    transition: all 0.3s ease; /* Плавный переход */
+    /* min-width: 100px; Можно задать минимальную ширину */
+    text-align: center; /* Центрирование текста */
+    /* box-sizing: border-box; Убедимся, что padding/border входят в ширину */
+}
+
+/* Стили при наведении на кнопку */
+button:hover {
+    background-color: #444; /* Фон при наведении */
+    color: #fff; /* Цвет текста при наведении */
+    border-color: #777; /* Цвет рамки при наведении */
+    /* transform: translateY(-2px); Небольшой подъем (опционально) */
+}
+
+/* Стили для заголовков внутри кнопок */
+/* Лучше избегать <h1> внутри кнопок, используем span или просто текст */
+/* Если оставляешь h1, убери стандартные маргины */
+button h1 {
+    margin: 0;
+    font-size: 1.1rem; /* Адаптируй размер */
+    font-weight: inherit; /* Наследуем жирность от button */
+}
+
+/* Адаптивность (простой пример) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Элементы в колонку на маленьких экранах */
+        align-items: flex-start; /* Выравнивание по левому краю */
+    }
+    .header {
+        margin-bottom: 10px; /* Отступ снизу у логотипа */
+    }
+    .buttons {
+        margin-left: 0; /* Отменяем margin-left: auto */
+        width: 100%; /* Ширина на всю доступную область */
+        justify-content: space-around; /* Равномерное распределение кнопок */
+    }
+    button {
+        flex-grow: 1; /* Кнопки растягиваются */
+        margin: 0 5px; /* Отступы между кнопками */
+    }
+}
+footer {
+    display: block;
+}
+a{
+    text-decoration: none;
+}
