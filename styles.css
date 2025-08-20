@@ -1,116 +1,322 @@
-/* Базовые стили */
-body {
-    margin: 0; /* Убираем стандартные отступы */
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный шрифт */
-    background-color: #111; /* Чуть менее "плоский" черный */
-    color: #fff;
-    min-height: 100vh; /* Чтобы фон растягивался на всю высоту */
-}
-
-/* Стили для шапки */
-header {
-    background-color: #222; /* Темнее, чем #333, для строгости */
-    /* border-radius: 5px; Убираем скругления для строгости, или сделаем минимальные */
-    border-radius: 2px; /* Минимальное скругление */
-    display: flex;
-    align-items: center; /* Выравнивание по центру по вертикали */
-    padding: 10px 20px; /* Внутренние отступы вместо margin у потомков */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Легкая тень для выделения */
-    /* Или, для более резкого вида, можно убрать тень */
-}
-
-/* Ссылка с логотипом */
-.header {
-    /* margin-top: 0.2%; Лучше использовать px или rem для точности */
-    /* margin-left: 10px; */
-    display: block; /* Убедимся, что это блочный элемент */
-    /* Убираем margin, так как используем padding у header */
-}
-
-.header img {
-    display: block; /* Убираем возможное нижнее пространство под картинкой */
-    /* width и height лучше задавать в HTML или в CSS, но не в обоих одновременно, если не нужно. */
-    /* Если размеры фиксированы в HTML, можно убрать отсюда. */
-     height: 120px;
-    width: auto;
-}
-
-/* Контейнер для кнопок */
-.buttons {
-    display: flex; /* Используем flexbox для выравнивания кнопок */
-    margin-left: auto; /* Прижимает контейнер кнопок вправо */
-    /* height: auto; Не нужно, если не задаем фиксированную высоту */
-    /* border-radius: 5px; Убираем скругления */
-    background-color: #333; /* Темный фон для контейнера кнопок */
-    padding: 5px; /* Небольшой отступ внутри */
-    /* box-shadow: inset 0 0 2px rgba(0,0,0,0.5); Внутренняя тень для глубины (опционально) */
-}
-
-/* Стили для ссылок-кнопок */
-.headr, .heade { /* Объединяем стили для обеих кнопок */
-    /* margin-left: auto; Убираем, используем gap у .buttons */
-    /* margin-right: 10px; */
-    margin: 0; /* Сбрасываем стандартные маржины */
-    text-decoration: none; /* Убираем подчеркивание */
-    display: block; /* Блочный элемент */
-}
-
-/* Стили для самих кнопок */
-button {
-    background-color: transparent; /* Прозрачный фон */
-    color: #ddd; /* Цвет текста */
-    border: 1px solid #555; /* Тонкая рамка */
-    border-radius: 0; /* Убираем скругления */
-    padding: 10px 20px; /* Внутренние отступы */
-    cursor: pointer; /* Курсор-рука */
-    font-size: 1rem; /* Размер шрифта */
-    font-weight: 500; /* Полужирный шрифт */
-    transition: all 0.3s ease; /* Плавный переход */
-    /* min-width: 100px; Можно задать минимальную ширину */
-    text-align: center; /* Центрирование текста */
-    /* box-sizing: border-box; Убедимся, что padding/border входят в ширину */
-}
-
-/* Стили при наведении на кнопку */
-button:hover {
-    background-color: #444; /* Фон при наведении */
-    color: #fff; /* Цвет текста при наведении */
-    border-color: #777; /* Цвет рамки при наведении */
-    /* transform: translateY(-2px); Небольшой подъем (опционально) */
-}
-
-/* Стили для заголовков внутри кнопок */
-/* Лучше избегать <h1> внутри кнопок, используем span или просто текст */
-/* Если оставляешь h1, убери стандартные маргины */
-button h1 {
+/* === Обнуление и базовые стили === */
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-size: 1.1rem; /* Адаптируй размер */
-    font-weight: inherit; /* Наследуем жирность от button */
+    padding: 0;
 }
 
-/* Адаптивность (простой пример) */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Элементы в колонку на маленьких экранах */
-        align-items: flex-start; /* Выравнивание по левому краю */
-    }
-    .header {
-        margin-bottom: 10px; /* Отступ снизу у логотипа */
-    }
-    .buttons {
-        margin-left: 0; /* Отменяем margin-left: auto */
-        width: 100%; /* Ширина на всю доступную область */
-        justify-content: space-around; /* Равномерное распределение кнопок */
-    }
-    button {
-        flex-grow: 1; /* Кнопки растягиваются */
-        margin: 0 5px; /* Отступы между кнопками */
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: #eee;
+    line-height: 1.6;
+    min-height: 100vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
-footer {
+
+/* === Шапка === */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background-color: #222;
+    border-bottom: 5px solid #333;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo-link img {
+    height: 100px;
+    width: auto;
     display: block;
 }
-a{
+
+.nav-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #ddd;
+    border: 1px solid #555;
     text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.btn:hover {
+    background-color: #444;
+    color: #fff;
+    border-color: #777;
+}
+body.loaded main {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* === Основной контент === */
+main {
+    padding: 40px 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.lead {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #bbb;
+}
+
+.feature {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    background-color: #151515;
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.feature-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.feature-content h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.feature-content p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.screenshot-container {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.screenshot {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.screenshot:hover {
+    transform: scale(1.02);
+}
+
+/* === Футер === */
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #222;
+    margin-top: 60px;
+    border-top: 1px solid #333;
+    color: #999;
+}
+
+.site-footer h3 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: #ddd;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: #8ab4f8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #bbd8f9;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #777;
+}
+.download-page {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.download-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.status {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.status strong {
+    color: #83e47b; /* Зеленый акцент — как в лого */
+}
+
+.download-page p {
+    font-size: 1.1rem;
+    color: #bbb;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.note {
+    margin-top: 40px;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border-left: 4px solid #5a3a8d;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* === Страница FAQ === */
+.faq-page {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.faq-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.faq-page .status {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+.faq-page p {
+    font-size: 1.1rem;
+    color: #bbb;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.cta-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #5a3a8d;
+    color: #bb86fc;
+}
+
+.btn-outline:hover {
+    background-color: rgba(115, 0, 255, 0.2);
+}
+
+.note {
+    margin-top: 40px;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border-left: 4px solid #5a3a8d;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-telegram {
+    background-color: transparent;
+    border: 1px solid #50a0e2;
+    color: #7abcf1;
+}
+
+.btn-telegram:hover {
+    background-color: rgba(0, 238, 255, 0.2);}
+
+/* === Адаптивность === */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 18px;
+        display: block;
+        margin: 20px auto;
+        max-width: 280px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    .feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .screenshot-container {
+        order: -1;
+        margin-bottom: 20px;
+    }
 }
