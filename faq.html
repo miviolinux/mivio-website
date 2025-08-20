@@ -6,6 +6,7 @@
     <title>FAQ — Mivio Linux</title>
     <meta name="description" content="Frequently Asked Questions about Mivio Linux. Currently in development. Stay tuned for updates.">
     <link rel="stylesheet" href="styles.css" />
+    <script src="javascript/faq-translate.js"></script>
 </head>
 <body>
     <header class="header">
@@ -13,6 +14,10 @@
             <img src="sources/logoandslogan.png" alt="Mivio Linux — Arch-based, Simple, Modern" />
         </a>
         <nav class="nav-buttons">
+            <div class="language-switcher">
+                <button onclick="setLanguage('en')", class="btn", style="margin-left: 1%;">EN</button>
+                <button onclick="setLanguage('ru')", class="btn">RU</button>
+            </div>
             <a href="download.html" class="btn">Download</a>
             <a href="faq.html" class="btn">FAQ</a>
         </nav>
@@ -20,22 +25,23 @@
 
     <main class="faq-page">
         <section class="content">
-            <h1>Frequently Asked Questions</h1>
-            <p class="status">
-                Mivio Linux is still <strong>under development</strong>. The first release is coming soon.
+            <!-- <h1>Frequently Asked Questions</h1> -->
+            <h1 data-i18n="h1">Frequently Asked Questions</h1>
+            <p class="status" data-i18n="status">
+                Mivio Linux is still <strong class="green">under development</strong>. The first release is coming soon.
             </p>
-            <p>
+            <p data-i18n="no_faq">
                 There are no FAQs yet — but they will appear as soon as the system is ready.
             </p>
-            <p>
+            <p data-i18n="follow">
                 Follow the progress and get early access to information:
             </p>
             <div class="cta-links">
                 <a href="https://t.me/MivioLinux" target="_blank" rel="noopener" class="btn btn-telegram">Join Telegram (RU)</a>
-                <a href="https://github.com/miviolinux?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">Watch on GitHub</a>
+                <a href="https://github.com/miviolinux?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub</a>
             </div>
             <div class="note">
-                <p>Check back after the first release — installation guide, known issues, and answers will be here.</p>
+                <p data-i18n="note">Check back after the first release — installation guide, known issues, and answers will be here.</p>
             </div>
         </section>
     </main>
@@ -52,6 +58,8 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('loaded');
     });
+    
 </script>
+
 </body>
 </html>

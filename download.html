@@ -6,6 +6,7 @@
     <title>Download Mivio Linux</title>
     <meta name="description" content="Download Mivio Linux — an Arch-based distribution with Calamares installer. Currently in development.">
     <link rel="stylesheet" href="styles.css" />
+    <script src="javascript/download-translate.js"></script>
 </head>
 <body>
     <header class="header">
@@ -13,6 +14,10 @@
             <img src="sources/logoandslogan.png" alt="Mivio Linux — Arch-based, Simple, Modern" />
         </a>
         <nav class="nav-buttons">
+            <div class="language-switcher">
+                <button onclick="setLanguage('en')", class="btn", style="margin-left: 1%;">EN</button>
+                <button onclick="setLanguage('ru')", class="btn">RU</button>
+            </div>
             <a href="download.html" class="btn">Download</a>
             <a href="faq.html" class="btn">FAQ</a>
         </nav>
@@ -20,17 +25,17 @@
 
     <main class="download-page">
         <section class="content">
-            <h1>Download Mivio Linux</h1>
-            <p class="status">
+            <h1 >Download Mivio Linux</h1>
+            <p class="status" data-i18n="status">
                 Mivio Linux is currently <strong>under active development</strong>. The first stable release is coming soon.
             </p>
-            <p>
+            <p data-i18n="contentp">
                 Follow progress and contribute on GitHub:
             </p>
             <a href="https://github.com/miviolinux/mivio-linux" target="_blank" rel="noopener" class="btn btn-outline">
                 View on GitHub
             </a>
-            <div class="note">
+            <div class="note" data-i18n="note">
                 <p>Stay tuned for early builds, release announcements, and installation guides.</p>
             </div>
         </section>

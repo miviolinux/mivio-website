@@ -6,6 +6,7 @@
     <title>Mivio Linux — Arch-based with Calamares Installer</title>
     <meta name="description" content="Mivio Linux is an Arch Linux-based distribution featuring a graphical Calamares installer and KDE Plasma desktop.">
     <link rel="stylesheet" href="styles.css" />
+    <script src="javascript/index-translate.js"></script>
 </head>
 <body>
     <header class="header">
@@ -13,15 +14,20 @@
             <img src="sources/logoandslogan.png" alt="Mivio Linux — Arch-based, Simple, Modern" />
         </a>
         <nav class="nav-buttons">
+            <div class="language-switcher">
+                <button onclick="setLanguage('en')", class="btn", style="margin-left: 1%;">EN</button>
+                <button onclick="setLanguage('ru')", class="btn">RU</button>
+            </div>
             <a href="download.html" class="btn">Download</a>
             <a href="faq.html" class="btn">FAQ</a>
         </nav>
+        
     </header>
 
     <main>
         <section class="hero">
-            <h1>Mivio Linux</h1>
-            <p class="lead">An Arch Linux-based distribution with a <strong>graphical Calamares installer</strong> and KDE Plasma desktop — simple, modern, and user-friendly.</p>
+            <h1><strong class="green">Mivio</strong> Linux</h1>
+            <p class="lead" data-i18n="lead">An Arch Linux-based distribution with a <strong>graphical Calamares installer</strong> and KDE Plasma desktop — simple, modern, and user-friendly.</p>
         </section>
 
         <section class="feature">
@@ -29,9 +35,9 @@
                 <img src="sources/mivio-screen.png" alt="Mivio Linux running KDE Plasma desktop" class="screenshot" />
             </div>
             <div class="feature-content">
-                <h2>Easy Interface</h2>
-                <p>Enjoy a clean and powerful experience with the <strong>KDE Plasma desktop</strong> — fully featured, customizable, and intuitive from the first boot.</p>
-                <a href="download.html" class="btn">Download now</a>
+                <h2 data-i18n="featurecontenth2">Easy Interface</h2>
+                <p data-i18n="featurecontentp">Enjoy a clean and powerful experience with the <strong>KDE Plasma desktop</strong> — fully featured, customizable, and intuitive from the first boot.</p>
+                <a href="download.html" class="btn" data-i18n="download">Download now</a>
             </div>
         </section>
     </main>

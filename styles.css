@@ -13,7 +13,28 @@ body {
     min-height: 100vh;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+.language-switcher {
+    display: flex;
+    gap: 4px;
+    margin-left: 16px;
+}
 
+/* Стили для самих кнопок переключателя */
+.language-switcher .btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    min-width: auto;
+    border-radius: 0;
+}
+
+/* Активная кнопка (для будущей реализации) */
+.language-switcher .btn.active {
+    background-color: #444;
+    border-color: #777;
+}
+.language-switcher .btn:first-child {
+    margin-left: 0;
+}
 /* === Шапка === */
 .header {
     display: flex;
@@ -47,7 +68,7 @@ body {
     font-size: 1rem;
     text-align: center;
     transition: all 0.3s ease;
-    min-width: 100px;
+    min-width: 110px;
 }
 
 .btn:hover {
@@ -105,7 +126,9 @@ main {
     margin-bottom: 16px;
     color: #fff;
 }
-
+.green{
+    color: #30D475;
+}
 .feature-content p {
     font-size: 1.1rem;
     color: #ccc;
@@ -190,8 +213,8 @@ main {
     margin-right: auto;
 }
 
-.status strong {
-    color: #83e47b; /* Зеленый акцент — как в лого */
+ strong {
+    color: #30D475; /* Зеленый акцент — как в лого */
 }
 
 .download-page p {
@@ -205,7 +228,7 @@ main {
     margin-top: 40px;
     padding: 15px;
     background-color: #1a1a1a;
-    border-left: 4px solid #5a3a8d;
+    border-left: 4px solid #30D475;
     text-align: center;
     color: #999;
     font-style: italic;
@@ -257,19 +280,6 @@ main {
 .btn-outline:hover {
     background-color: rgba(115, 0, 255, 0.2);
 }
-
-.note {
-    margin-top: 40px;
-    padding: 15px;
-    background-color: #1a1a1a;
-    border-left: 4px solid #5a3a8d;
-    text-align: center;
-    color: #999;
-    font-style: italic;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
 .btn-telegram {
     background-color: transparent;
     border: 1px solid #50a0e2;
@@ -281,6 +291,15 @@ main {
 
 /* === Адаптивность === */
 @media (max-width: 768px) {
+    .language-switcher {
+        margin-left: 8px;
+        gap: 2px;
+    }
+    
+    .language-switcher .btn {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+    }
     .header {
         flex-direction: column;
         align-items: flex-start;
