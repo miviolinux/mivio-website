@@ -2,9 +2,9 @@
 
 const translations = {
     en: {
-        lead: "An Arch Linux-based distribution with a <strong>graphical Calamares installer</strong> and KDE Plasma desktop — simple, modern, and user-friendly.",
+        lead: 'An Arch Linux-based distribution with a <a href="https://calamares.io/"><strong>graphical Calamares installer</strong></a> and KDE Plasma desktop — simple, modern, and user-friendly.',
         featurecontenth2: "Easy Interface",
-        featurecontentp: "Enjoy a clean and powerful experience with the <strong>KDE Plasma desktop</strong> — fully featured, customizable, and intuitive from the first boot.",
+        featurecontentp:'Enjoy a clean and powerful experience with the <a href="https://kde.org/plasma-desktop/"><strong>KDE Plasma desktop</strong></a> — fully featured, customizable, and intuitive from the first boot.',
         download: "Download Now",
         // btn_telegram: "Join Telegram (RU)",
         // btn_github: "View on GitHub",
@@ -12,9 +12,9 @@ const translations = {
         // copyright: "&copy; 2025 Mivio Linux. Open source and community-driven. Licensed under GPL-3.0."
     },
     ru: {
-        lead: "Дистрибутив на базе Arch Linux с <strong>графическим установщиком Calamares</strong> и рабочим столом KDE Plasma — простой, современный и удобный.",
+        lead: 'Дистрибутив на базе Arch Linux с <a href="https://calamares.io/"><strong>графическим установщиком Calamares</strong></a> и рабочим столом KDE Plasma — простой, современный и удобный.',
         featurecontenth2: "Простой интерфейс",
-        featurecontentp: "Наслаждайтесь чистым и мощным опытом работы с <strong>рабочим столом KDE Plasma</strong> — полнофункциональным, настраиваемым и интуитивно понятным с первой загрузки.",
+        featurecontentp: 'Наслаждайтесь чистым и мощным опытом работы с <a href="https://kde.org/plasma-desktop/"><strong>рабочим столом KDE Plasma</strong></a> — полнофункциональным, настраиваемым и интуитивно понятным с первой загрузки.',
         download: "Загрузить"
     }
 };
